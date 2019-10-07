@@ -1,7 +1,5 @@
 #Find restaurants near Case Western Reserve University baesd on Rating
 import requests
-# Your API key
-api_key = '****'
 def get_businesses(query,api_key,min_rating=0.0,max_results = 30):
     url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=%s&key=%s" % (query,api_key)
     response = requests.get(url)
@@ -38,5 +36,7 @@ def get_businesses(query,api_key,min_rating=0.0,max_results = 30):
     return results2
 
 #Find restaurant near Case Western Reserve University which rating greater than 4.0
+# Your API key
+api_key = '****'
 query = "restaurants+near+Case+Western+Reserve+University"
 get_businesses(query,api_key,min_rating=4)
